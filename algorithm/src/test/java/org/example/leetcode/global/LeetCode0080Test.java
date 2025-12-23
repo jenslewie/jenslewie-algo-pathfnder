@@ -14,11 +14,11 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 public class LeetCode0080Test {
 
-    private static final LeetCode0080 SOLUTION = new LeetCode0080();
+    private static final LeetCode0080 LEET_CODE = new LeetCode0080();
     private static final Map<String, Function<int[], Integer>> ALGO_VARIANTS = Map.of(
-            "removeDuplicates1", SOLUTION::removeDuplicates1,
-            "removeDuplicates2", SOLUTION::removeDuplicates2,
-            "removeDuplicates3", SOLUTION::removeDuplicates3
+            "removeDuplicates1", LEET_CODE::removeDuplicates1,
+            "removeDuplicates2", LEET_CODE::removeDuplicates2,
+            "removeDuplicates3", LEET_CODE::removeDuplicates3
     );
 
     @ParameterizedTest(name = "[{index}] {0} | Input: {1}")
