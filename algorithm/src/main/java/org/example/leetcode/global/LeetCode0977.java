@@ -1,5 +1,8 @@
 package org.example.leetcode.global;
 
+/**
+ * <a href="https://leetcode.cn/problems/squares-of-a-sorted-array">...</a>
+ */
 public class LeetCode0977 {
 
     public int[] sortedSquares(int[] nums) {
