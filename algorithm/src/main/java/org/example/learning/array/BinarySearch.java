@@ -1,24 +1,49 @@
 package org.example.learning.array;
 
+/**
+ * <a href="https://labuladong.online/algo/essential-technique/binary-search-framework">...</a>
+ */
 public class BinarySearch {
 
     public static void main(String[] args) {
-        int[] arr = {0, 1, 2, 3, 4, 5, 5, 5, 5, 5, 6, 7, 8, 9};
+        int[] arr = {0, 1, 2, 3, 4, 5, 5, 5, 5, 5, 6, 8, 9};
 
         int result = binarySearch(arr, 5);
         System.out.println("Target 5 is located at: " + result);
         result = binarySearch(arr, 10);
         System.out.println("Target 10 is located at: " + result);
+        System.out.println();
 
         result = binarySearchForLeftBoundary(arr, 5);
         System.out.println("Left boundary of target 5 is located at: " + result);
+        result = binarySearchForLeftBoundary(arr, 7);
+        System.out.println("Left boundary of target 7 located at: " + result);
         result = binarySearchForLeftBoundary(arr, 10);
+        System.out.println("Left boundary of target 10 is located at: " + result);
+        System.out.println();
+
+        result = binarySearchForLeftBoundary2(arr, 5);
         System.out.println("Left boundary of target 5 is located at: " + result);
+        result = binarySearchForLeftBoundary2(arr, 7);
+        System.out.println("Left boundary of target 7 located at: " + result);
+        result = binarySearchForLeftBoundary2(arr, 10);
+        System.out.println("Left boundary of target 10 is located at: " + result);
+        System.out.println();
 
         result = binarySearchForRightBoundary(arr, 5);
         System.out.println("Right boundary of target 5 is located at: " + result);
+        result = binarySearchForRightBoundary(arr, 7);
+        System.out.println("Right boundary of target 7 is located at: " + result);
         result = binarySearchForRightBoundary(arr, 10);
+        System.out.println("Right boundary of target 10 is located at: " + result);
+        System.out.println();
+
+        result = binarySearchForRightBoundary2(arr, 5);
         System.out.println("Right boundary of target 5 is located at: " + result);
+        result = binarySearchForRightBoundary2(arr, 7);
+        System.out.println("Right boundary of target 7 is located at: " + result);
+        result = binarySearchForRightBoundary2(arr, 10);
+        System.out.println("Right boundary of target 10 is located at: " + result);
     }
 
     public static int binarySearch(int[] arr, int target) {
@@ -54,6 +79,24 @@ public class BinarySearch {
         return arr[left] == target ? left : -1;
     }
 
+    public static int binarySearchForLeftBoundary2(int[] arr, int target) {
+        int left = 0, right = arr.length;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (target > arr[mid]) {
+                left = mid + 1;
+            } else if (target < arr[mid]) {
+                right = mid;
+            } else {
+                right = mid;
+            }
+        }
+        if (left < 0 || left >= arr.length) {
+            return -1;
+        }
+        return arr[left] == target ? left : -1;
+    }
+
     public static int binarySearchForRightBoundary(int[] arr, int target) {
         int left = 0, right = arr.length - 1;
         while (left <= right) {
@@ -70,6 +113,24 @@ public class BinarySearch {
             return -1;
         }
         return arr[right] == target ? right : -1;
+    }
+
+    public static int binarySearchForRightBoundary2(int[] arr, int target) {
+        int left = 0, right = arr.length;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (target > arr[mid]) {
+                left = mid + 1;
+            } else if (target < arr[mid]) {
+                right = mid;
+            } else {
+                left = mid + 1;
+            }
+        }
+        if (right - 1 < 0 || right - 1 >= arr.length) {
+            return -1;
+        }
+        return arr[right - 1] == target ? right - 1 : -1;
     }
 
 }
