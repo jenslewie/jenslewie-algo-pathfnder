@@ -48,14 +48,12 @@ class LeetCode0232Test {
 
         // Convert to array for comparison
         Object[] actualArr = actual.toArray(new Object[0]);
-        assertEquals(expected.length, actualArr.length,
-                () -> "Output length mismatch in case '%s'".formatted(caseName));
+        assertEquals(expected.length, actualArr.length, () -> "Output length mismatch in case '%s'".formatted(caseName));
 
         for (int i = 0; i < expected.length; i++) {
             int finalI = i;
-            assertEquals(expected[i], actualArr[i],
-                    () -> "Mismatch at index %d in case '%s': expected=%s, actual=%s"
-                            .formatted(finalI, caseName, expected[finalI], actualArr[finalI]));
+            assertEquals(expected[i], actualArr[i], () -> "Mismatch at index %d in case '%s': expected=%s, actual=%s"
+                    .formatted(finalI, caseName, expected[finalI], actualArr[finalI]));
         }
     }
 

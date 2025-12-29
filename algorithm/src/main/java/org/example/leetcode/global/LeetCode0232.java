@@ -2,6 +2,9 @@ package org.example.leetcode.global;
 
 import java.util.Stack;
 
+/**
+ * <a href="https://leetcode.cn/problems/implement-queue-using-stacks">...</a>
+ */
 public class LeetCode0232 {
 
     private final Stack<Integer> inStack, outStack;
