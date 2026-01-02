@@ -35,13 +35,13 @@ class LeetCode0143Test {
         ALGO_VARIANTS.get(algoName).apply(head);
         int[] actual = LinkedListBuilder.toArray(head);
 
-        assertArrayEquals(expected, actual,  () -> "Case '%s' with algo='%s' failed. input=%s"
-                        .formatted(caseName, algoName, java.util.Arrays.toString(input)));
+        assertArrayEquals(expected, actual, () -> "Case '%s' with algo='%s' failed. input=%s"
+                .formatted(caseName, algoName, java.util.Arrays.toString(input)));
     }
 
     private static Stream<Arguments> allCombinations() {
         return testCases().flatMap(tc -> ALGO_VARIANTS.keySet().stream()
-                        .map(algo -> Arguments.of(tc.name, algo, tc.input, tc.expected))
+                .map(algo -> Arguments.of(tc.name, algo, tc.input, tc.expected))
         );
     }
 
