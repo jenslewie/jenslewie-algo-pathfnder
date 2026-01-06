@@ -2,6 +2,9 @@ package org.example.leetcode.lcr;
 
 import java.util.Stack;
 
+/**
+ * <a href="https://leetcode.cn/problems/bao-han-minhan-shu-de-zhan-lcof">...</a>
+ */
 public class LeetCode0147 {
 
     Stack<int[]> stack;
