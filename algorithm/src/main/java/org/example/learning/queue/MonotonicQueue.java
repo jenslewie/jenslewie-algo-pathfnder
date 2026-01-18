@@ -9,17 +9,17 @@ public class MonotonicQueue<E extends Comparable<E>> {
     LinkedList<E> minQueue = new LinkedList<>();
 
     public void push(E e) {
-        queue.addLast(e);
+        queue.offerLast(e);
 
         while (!maxQueue.isEmpty() && maxQueue.getLast().compareTo(e) < 0) {
             maxQueue.pollLast();
         }
-        maxQueue.addLast(e);
+        maxQueue.offerLast(e);
 
         while (!minQueue.isEmpty() && minQueue.getLast().compareTo(e) > 0) {
             minQueue.pollLast();
         }
-        minQueue.addLast(e);
+        minQueue.offerLast(e);
     }
 
     public E max() {
