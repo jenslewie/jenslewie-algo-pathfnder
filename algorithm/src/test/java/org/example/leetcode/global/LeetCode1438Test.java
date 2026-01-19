@@ -20,7 +20,8 @@ class LeetCode1438Test {
 
     private static final Map<String, LongestSubarrayFunction> ALGO_VARIANTS = Map.of(
             "monotonic_queue_wrapper", (nums, limit) -> new LeetCode1438_1().longestSubarray(nums, limit),
-            "dual_monotonic_queues", (nums, limit) -> new LeetCode1438_2().longestSubarray(nums, limit)
+            "dual_monotonic_queues", (nums, limit) -> new LeetCode1438_2().longestSubarray(nums, limit),
+            "array", (nums, limit) -> new LeetCode1438_3().longestSubarray(nums, limit)
     );
 
     @ParameterizedTest(name = "[{index}] case={0}, algo={1}, nums={2}, limit={3}")
