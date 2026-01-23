@@ -4,6 +4,9 @@ import org.example.model.tree.TreeNode;
 
 import java.util.Stack;
 
+/**
+ * <a href="https://leetcode.cn/problems/invert-binary-tree">...</a>
+ */
 public class LeetCode0226_3 {
 
     public TreeNode invertTree(TreeNode root) {
