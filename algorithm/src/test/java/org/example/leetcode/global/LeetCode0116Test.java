@@ -22,10 +22,10 @@ class LeetCode0116Test {
     }
 
     private static final Map<String, ConnectFunction> ALGO_VARIANTS = Map.of(
-            "bfs_with_queue", root -> new LeetCode0116_1().connect(root),
-            "recursive_traverse_pairs", root -> new LeetCode0116_2().connect(root),
-            "dfs_with_parent_next", root -> new LeetCode0116_3().connect(root),
-            "iterative_with_dummy", root -> new LeetCode0116_4().connect(root)
+            "bfs_iterative_traverse_with_queue", root -> new LeetCode0116_1().connect(root),
+            "dfs_recursive_traverse_connect_siblings", root -> new LeetCode0116_2().connect(root),
+            "dfs_recursive_divide_conquer_with_parent_next", root -> new LeetCode0116_3().connect(root),
+            "bfs_iterative_traverse_with_dummy_head", root -> new LeetCode0116_4().connect(root)
     );
 
     @ParameterizedTest(name = "[{index}] case={0}, algo={1}, tree={2}")
