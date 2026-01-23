@@ -5,12 +5,6 @@ package org.example.leetcode.global;
  */
 public class LeetCode0853_3 {
 
-    public static void main(String[] args) {
-        LeetCode0853_3 leet = new LeetCode0853_3();
-        System.out.println(leet.carFleet(12, new int[] {10,8,0,5,3}, new int[] {2,4,1,1,3}));
-        System.out.println(leet.carFleet(10, new int[] {0,4,2}, new int[] {2,1,3}));
-    }
-
     public int carFleet(int target, int[] position, int[] speed) {
         double[] times = new double[target];
         for (int i = 0; i < position.length; i++) {
