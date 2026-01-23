@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class TreeNode {
     public int val;
-    public TreeNode left, right;
+    public TreeNode left, right, next;
 
     public TreeNode(int val) {
         this.val = val;

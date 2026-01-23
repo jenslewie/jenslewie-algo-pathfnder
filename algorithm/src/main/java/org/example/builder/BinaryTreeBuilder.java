@@ -23,10 +23,42 @@ public class BinaryTreeBuilder {
         return node;
     }
 
-    public static boolean isSameTree(TreeNode p, TreeNode q) {
-        if (p == null && q == null) return true;
-        if (p == null || q == null) return false;
-        return p.val == q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+    public static TreeNode buildTreeWithNext(Integer[] treeVals, Integer[] nextVals) {
+        if (treeVals.length == 0) return null;
+        TreeNode[] nodes = new TreeNode[treeVals.length];
+
+        for (int i = 0; i < treeVals.length; i++) {
+            if (treeVals[i] != null) {
+                nodes[i] = new TreeNode(treeVals[i]);
+            }
+        }
+
+        for (int i = 0; i < treeVals.length; i++) {
+            if (nodes[i] != null) {
+                int leftIdx = 2 * i + 1;
+                int rightIdx = 2 * i + 2;
+                if (leftIdx < treeVals.length) nodes[i].left = nodes[leftIdx];
+                if (rightIdx < treeVals.length) nodes[i].right = nodes[rightIdx];
+
+                if (nextVals[i] != null) {
+                    int levelStart = levelStartIndex(i);
+                    int levelEnd = Math.min(levelStart * 2 + 1, treeVals.length);
+                    for (int j = i + 1; j < levelEnd; j++) {
+                        if (nodes[j] != null && nodes[j].val == nextVals[i]) {
+                            nodes[i].next = nodes[j];
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        return nodes[0];
+    }
+
+    private static int levelStartIndex(int i) {
+        int level = 0;
+        while ((1 << level) - 1 <= i) level++;
+        return (1 << (level - 1)) - 1;
     }
 
 }
