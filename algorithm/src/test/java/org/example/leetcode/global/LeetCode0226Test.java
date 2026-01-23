@@ -1,6 +1,7 @@
 package org.example.leetcode.global;
 
 import org.example.builder.BinaryTreeBuilder;
+import org.example.leetcode.utility.BinaryTreeUtility;
 import org.example.model.tree.TreeNode;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -32,7 +33,7 @@ class LeetCode0226Test {
         TreeNode root = BinaryTreeBuilder.build(input);
         TreeNode expectedTree = BinaryTreeBuilder.build(expected);
         TreeNode actualTree = ALGO_VARIANTS.get(algoName).apply(root);
-        assertTrue(BinaryTreeBuilder.isSameTree(expectedTree, actualTree),
+        assertTrue(BinaryTreeUtility.isSameTree(expectedTree, actualTree),
                 () -> String.format("Case '%s' with algo='%s' failed.", caseName, algoName));
     }
 
